@@ -1,0 +1,77 @@
+:root {
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+}
+
+button, input, input, a {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.formLine {
+  justify-content: center;
+
+  margin-top: -30px;
+}
+
+.formLine input {
+  width: 100%;
+  background: #262626;
+  border: 0;
+
+  color: #ffff;
+  border-radius: 8px;
+
+  line-height: 54px;
+  margin-right: 8px;
+}
+
+.formLine label {
+  float: left;
+}
+
+.formLine span {
+  display: block;
+  overflow: hidden;
+  padding: 0 5px;
+}
+
+.formLine button {
+  float: right;
+
+  line-height: 54px;
+  background: #1E6F9F;
+  color: white;
+}
+
+.formLine button[type=submit]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.formLine button[type=submit] {
+  border-radius: 8px;
+  border: 0;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 0.1s;
+  width: 90px;
+}
+
+.formLine button[type=submit]:not(:disabled):hover {
+  background: #2E7F95;
+}
+
