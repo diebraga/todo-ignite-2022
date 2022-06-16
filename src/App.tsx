@@ -1,4 +1,7 @@
 import logo from './assets/Logo.png'
+import Input from './components/Input';
+import Logo from './components/Logo';
+import TodoStatus from './components/ToDoStatus.tsx';
 import { useWindowSize } from './hooks/useWindowSize'
 
 function App() {
@@ -22,16 +25,14 @@ function App() {
             justifyContent: 'center',
             flexDirection: 'column'
           }}>
-          <img src={logo} />
+          <Logo src={logo}/>
         </div>
 
         <div style={{ padding: `0 ${formPadding}` }}>
-          <div className="formLine">
-            <button type='submit'>
-              Add task
-            </button>
-            <span><input type="text" /></span>
-          </div>
+          <Input
+            onSubmit={() => { }}
+          />
+<TodoStatus />
         </div>
       </div>
     </div >
