@@ -1,6 +1,10 @@
-import React from 'react'
 
-export default function TodoStatus() {
+interface TodoStatusProps {
+  createdTasksNumber: number
+  completedTasksNumber: number
+}
+
+export default function TodoStatus({ completedTasksNumber, createdTasksNumber }: TodoStatusProps) {
   const ballStyles = {
     borderRadius: '50%',
     width: '15px',
@@ -25,15 +29,17 @@ export default function TodoStatus() {
           Created tasks
           &nbsp;
           <span style={ballStyles}>
-            0
+            {createdTasksNumber}
           </span>
         </span>
         <span style={{ color: '#8284FA' }}>
           Done
           &nbsp;
           <span>
-            <span style={ballStyles}>
-              0
+            <span style={
+              { ...ballStyles, borderRadius: '8px' }
+            }>
+              {completedTasksNumber} of {createdTasksNumber}
             </span>
           </span>
         </span>

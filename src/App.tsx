@@ -14,7 +14,7 @@ interface TaskType {
 }
 
 function App() {
-  const [textContent, setTextContent] = useState('');
+  const [textContent, setTextContent] = useState<string>('');
   const [taskList, setTaskList] = useState<TaskType[]>([]);
 
   const { width } = useWindowSize();
@@ -61,6 +61,8 @@ function App() {
     }
   }
 
+  const completed = taskList.filter(prev => prev.isComplete === true).length
+
   return (
     <div>
       <div style={{ background: '#454545', height: '100vh', width: '100%', borderTop: '200px solid black' }}>
@@ -83,7 +85,10 @@ function App() {
             onChange={e => setTextContent(e.target.value)}
             value={textContent}
           />
-          <TodoStatus />
+          <TodoStatus
+            createdTasksNumber={taskList.length}
+            completedTasksNumber={completed}
+          />
 
           {taskList.length === 0 && <NoTasksBanner />}
 
