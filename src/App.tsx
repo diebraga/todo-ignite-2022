@@ -1,6 +1,7 @@
 import logo from './assets/Logo.png'
 import Input from './components/Input';
 import Logo from './components/Logo';
+import NoTasksBanner from './components/NoTasksBanner';
 import TodoStatus from './components/ToDoStatus.tsx';
 import { useWindowSize } from './hooks/useWindowSize'
 
@@ -25,14 +26,16 @@ function App() {
             justifyContent: 'center',
             flexDirection: 'column'
           }}>
-          <Logo src={logo}/>
+          <Logo src={logo} />
         </div>
 
         <div style={{ padding: `0 ${formPadding}` }}>
           <Input
             onSubmit={() => { }}
           />
-<TodoStatus />
+          <TodoStatus />
+
+          <NoTasksBanner />
         </div>
       </div>
     </div >

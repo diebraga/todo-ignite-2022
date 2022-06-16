@@ -6,9 +6,10 @@ interface InputProps {
 export default function Input({ onSubmit }: InputProps) {
   return (
     <form className="formLine">
-      <button 
-      type='submit'
-      onSubmit={onSubmit}
+      <button
+        type='submit'
+        onSubmit={onSubmit}
+        placeholder='Add a new task'
       >
         Add task
       </button>
