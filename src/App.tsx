@@ -2,6 +2,7 @@ import logo from './assets/Logo.png'
 import Input from './components/Input';
 import Logo from './components/Logo';
 import NoTasksBanner from './components/NoTasksBanner';
+import TaskItem from './components/TaskItem';
 import TodoStatus from './components/ToDoStatus.tsx';
 import { useWindowSize } from './hooks/useWindowSize'
 
@@ -35,7 +36,9 @@ function App() {
           />
           <TodoStatus />
 
-          <NoTasksBanner />
+          {/* <NoTasksBanner /> */}
+
+          <TaskItem />
         </div>
       </div>
     </div >
