@@ -1,19 +1,27 @@
+import { FormEvent } from "react"
 
 interface InputProps {
-  onSubmit: () => void
+  onSubmit: (e: FormEvent) => void
+  onChange: (e: any) => void
+  value: string
 }
 
-export default function Input({ onSubmit }: InputProps) {
+export default function Input({ onSubmit, onChange, value }: InputProps) {
   return (
-    <form className="formLine">
+    <form className="formLine" onSubmit={onSubmit}>
       <button
         type='submit'
-        onSubmit={onSubmit}
         placeholder='Add a new task'
       >
         Add task
       </button>
-      <span><input type="text" /></span>
+      <span>
+        <input
+          type="text"
+          onChange={onChange}
+          value={value}
+        />
+      </span>
     </form>
   )
 }

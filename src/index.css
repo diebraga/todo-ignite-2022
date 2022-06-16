@@ -10,7 +10,7 @@
 
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
 }
 
 button, input, input, a {
@@ -35,6 +35,8 @@ button, input, input, a {
 
   line-height: 54px;
   margin-right: 8px;
+
+  padding-left: 20px;
 }
 
 .formLine label {
