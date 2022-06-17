@@ -5,6 +5,7 @@ import Logo from './components/Logo';
 import NoTasksBanner from './components/NoTasksBanner';
 import TaskItem from './components/TaskItem';
 import TodoStatus from './components/ToDoStatus.tsx';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import { useWindowSize } from './hooks/useWindowSize'
 
 interface TaskType {
@@ -15,7 +16,7 @@ interface TaskType {
 
 function App() {
   const [textContent, setTextContent] = useState<string>('');
-  const [taskList, setTaskList] = useState<TaskType[]>([]);
+  const [taskList, setTaskList] = useLocalStorage<TaskType[]>('tasks', []);
 
   const { width } = useWindowSize();
 
@@ -65,7 +66,7 @@ function App() {
 
   return (
     <div>
-      <div style={{ background: '#454545', height: '100vh', width: '100%', borderTop: '200px solid black' }}>
+      <div style={{ background: '#454545', minHeight: '100vh', width: '100%', borderTop: '200px solid black' }}>
         <div
           style={{
             position: 'absolute',
