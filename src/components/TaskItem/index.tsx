@@ -25,7 +25,7 @@ export default function TaskItem({ content, onDelete, isCompleted, onClick }: Ta
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onClick={onClick}
+
       style={{
         width: '100%',
         background: '#262626',
@@ -36,7 +36,7 @@ export default function TaskItem({ content, onDelete, isCompleted, onClick }: Ta
         textDecoration: `${isCompleted ? 'line-through' : 'none'}`
       }}>
       <div style={{ display: 'flex', position: 'relative', justifyContent: 'space-between' }}>
-        <p style={{ display: 'flex' }}>
+        <p style={{ display: 'flex', height: '100%', width: '90%', cursor: 'pointer' }} onClick={onClick}>
           <span style={{ marginRight: '5px', marginTop: '-4px' }}>
             <img
               src={isCompleted ? CheckFull : Check}
@@ -60,7 +60,7 @@ export default function TaskItem({ content, onDelete, isCompleted, onClick }: Ta
             position: 'absolute',
             marginTop: '-4px',
             cursor: 'pointer',
-            paddingLeft: '5px'
+            paddingLeft: '5px',
           }}
           onClick={onDelete}
         />

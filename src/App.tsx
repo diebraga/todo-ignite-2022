@@ -33,7 +33,7 @@ function App() {
     else if (textContent.length > 1000) {
       alert("Task too long!");
       setTextContent('');
-    } else if (taskList.length > 10) alert("You can't add more than 10 tasks at the time!");
+    } else if (taskList.length === 10) alert("You can't add more than 10 tasks at the time!");
     else {
       setTaskList(prev => [...prev, newTask]);
       setTextContent('');
@@ -50,15 +50,15 @@ function App() {
     )
   }
 
-  function handleDeleteTask(index: number) {
+  function handleDeleteTask(id: number) {
     const proceed = confirm("Are you sure you want to delete this task?");
 
     if (proceed) {
-      setTaskList([
-        ...taskList.slice(0, index),
-        ...taskList.slice(index + 1, taskList.length)
-      ]);
-    }
+      setTaskList(taskList.filter(task => task.id !== id));
+      return;
+    } else {
+      return;
+    };
   }
 
   const completed = taskList.filter(prev => prev.isComplete === true).length
@@ -92,13 +92,13 @@ function App() {
 
           {taskList.length === 0 && <NoTasksBanner />}
 
-          {taskList.map((task, index) => {
+          {taskList.map((task) => {
             return (
               <div key={task.id}>
                 <TaskItem
                   content={task.content}
                   isCompleted={task.isComplete}
-                  onDelete={() => handleDeleteTask(index)}
+                  onDelete={() => handleDeleteTask(task.id)}
                   onClick={() => handleMarkAsRead(task.id)}
                 />
                 <br />
