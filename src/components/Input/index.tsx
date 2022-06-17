@@ -1,4 +1,5 @@
 import { FormEvent } from "react"
+import Plus from "../../assets/plus.svg";
 
 interface InputProps {
   onSubmit: (e: FormEvent) => void
@@ -12,8 +13,9 @@ export default function Input({ onSubmit, onChange, value }: InputProps) {
       <button
         type='submit'
         placeholder='Add a new task'
+        style={{ textAlign: 'center' }}
       >
-        Add task
+        <span>Add <img src={Plus} /></span>
       </button>
       <span>
         <input
